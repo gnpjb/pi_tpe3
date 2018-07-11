@@ -118,7 +118,7 @@ void addAeroLista(AeroListaADT lista,AeropuertoADT aeropuerto){
 		copyAeropuerto(&lista->first->aeropuerto,aeropuerto);
 	}
 	//si c==0 no se hace nada
-	else if(c>0){
+	else if(c<0){
 		aux1=aux;
 		aux=aux->next;
 		int found=0,alreadyIn=0;
