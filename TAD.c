@@ -15,7 +15,7 @@ typedef struct AeropuertoCDT{
 static void copyAeropuerto(AeropuertoADT dest,AeropuertoADT src){
 	strcpy(dest->local,src->local);
 	strcpy(dest->oaci,src->oaci);
-	strcpy(dest->iata,src->iata);	
+	strcpy(dest->iata,src->iata);
 	if(src->denominacion!=NULL){
 		dest->denominacion=malloc(strlen(src->denominacion)+1);
 		strcpy(dest->denominacion,src->denominacion);
@@ -53,6 +53,13 @@ void setAeropuertoDenominacion(AeropuertoADT aeropuerto,char *denominacion){
 		aeropuerto->denominacion=realloc(aeropuerto->denominacion,strlen(denominacion)+1);
 		strcpy(aeropuerto->denominacion,denominacion);
 	}
+}
+void resetAeropuerto(AeropuertoADT aeropuerto){
+	aeropuerto->iata[0]=0;
+	aeropuerto->oaci[0]=0;
+	if(aeropuerto->denominacion!=NULL)
+		aeropuerto->denominacion[0]=0;
+	aeropuerto->local[0]=0;
 }
 
 
@@ -101,16 +108,16 @@ AeroListaADT newAeroLista(){
 
 
 void addAeroLista(AeroListaADT lista,AeropuertoADT aeropuerto){
-	
+
 	AeroListaNode *aux=lista->first,*aux1;
 	int c;
-	
-	
+
+
 	if(aeropuerto==NULL||aeropuerto->oaci[0]==0){
 		return;
 	}
-	
-	
+
+
 	//si es el primero lo agrega al principio
 	if(aux==NULL||(c=strcmp(aux->aeropuerto.oaci,aeropuerto->oaci))>0){
 		lista->first=malloc(sizeof(*lista->first));

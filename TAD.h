@@ -45,6 +45,7 @@ void setAeropuertoLocal(AeropuertoADT aeropuerto, char local[]);
 void setAeropuertoOACI(AeropuertoADT aeropuerto, char oaci[]);
 void setAeropuertoIATA(AeropuertoADT aeropuerto, char iata[]);
 void setAeropuertoDenominacion(AeropuertoADT aeropuerto,char *denominacion);
+void resetAeropuerto(AeropuertoADT);
 
 char* getAeropuertoLocal(AeropuertoADT aeropuerto);
 char* getAeropuertoOACI(AeropuertoADT aeropuerto);

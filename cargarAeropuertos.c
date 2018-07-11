@@ -20,10 +20,7 @@ AeroListaADT cargarAeropuertos(char *filename){
 
 	char *field;
 	while(fgets(linea,MAX_LONG_LINEA,f)!=NULL){
-		setAeropuertoIATA(toAdd,"");
-		setAeropuertoLocal(toAdd,"");
-		setAeropuertoOACI(toAdd,"");
-		setAeropuertoDenominacion(toAdd,"");
+		resetAeropuerto(toAdd);
 		//primer field es local
 		field=strtok(linea,DELIM);
 		if(field!=NULL){
