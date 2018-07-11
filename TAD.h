@@ -4,7 +4,7 @@
 //definicion de constantes que usara el TAD AeropuertoCDT
 #define LONG_CODIGO_LOCAL 3
 #define LONG_CODIGO_OACI 4
-#define LONG_CODIGO_IATA 4
+#define LONG_CODIGO_IATA 3
 
 enum{V_INTERNACIONAL,V_CABOTAJE,V_NA};
 enum{V_ATERRIZAJE,V_DESPEGUE};
