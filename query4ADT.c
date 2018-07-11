@@ -122,7 +122,7 @@ static void addInterno(query4ADT query,char oaciLocal[],char otroOaci[],int tipo
 						aux1->next=malloc(sizeof(*aux1->next));
 						aux1->next->first=NULL;
 						aux1->next->next=aux;
-						strcpy(aux1->next->localOaci,oaciAter);
+						strcpy(aux1->next->localOaci,oaciLocal);
 						aux=aux1->next;
 						found=1;
 					}
@@ -140,7 +140,7 @@ static void addInterno(query4ADT query,char oaciLocal[],char otroOaci[],int tipo
 
 void add4(query4ADT query,char oaciDes[],char locFlagDes,char oaciAter[],char locFlagAter){
 	if(locFlagDes==1){
-		addInterno(query,oaciDes[], oaciAter[],DES);
+		addInterno(query,oaciDes, oaciAter,DES);
 	}
 	if(locFlagAter==1){
 		addInterno(query,oaciAter,oaciDes,ATER);

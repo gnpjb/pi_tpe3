@@ -28,7 +28,6 @@ int main( int argc, char *argv[] ){
 			query3ADT query3=newQuery3();
 			query4ADT query4=newQuery4();
 			vueloADT vuelo=newVuelo();
-			VTFecha fecha;
 
 			FILE* fVuelos=fopen(NOMBRE_ARCHIVO_VUELOS,"rt");
 			while(!feof(fVuelos)){
