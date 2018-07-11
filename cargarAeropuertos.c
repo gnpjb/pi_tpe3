@@ -15,9 +15,10 @@ AeroListaADT cargarAeropuertos(char *filename){
 
 	AeroListaADT resp=newAeroLista();
 	AeropuertoADT toAdd=newAeropuerto();
+	while(fgetc(f)!='\n')
+		;
 
 	char linea[MAX_LONG_LINEA];
-
 	char *field;
 	while(fgets(linea,MAX_LONG_LINEA,f)!=NULL){
 		resetAeropuerto(toAdd);
