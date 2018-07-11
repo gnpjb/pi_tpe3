@@ -7,7 +7,7 @@
 #define MAX_LONG_LINEA 500
 #define ASCIINUM_TO_INT(c) ((int)(c-'0'))
 
-vueloADT cargarNextVuelo(FILE *f,vueloADT vuelo){
+vueloADT cargarNextVuelo(FILE *f,vueloADT vuelo,int anio){
 	char *field
 	,linea[MAX_LONG_LINEA]
 	,*p_linea;
@@ -29,7 +29,7 @@ vueloADT cargarNextVuelo(FILE *f,vueloADT vuelo){
 			setVueloFecha(vuelo,fecha);
 			//luego la hora
 			field=strtok(NULL,DELIM);
-			if(field!=NULL){
+			if(field!=NULL||fecha.anio!=anio){
 				//luego ignoramos el siguiente
 				field=strtok(NULL,DELIM);
 				if(field!=NULL){
